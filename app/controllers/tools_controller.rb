@@ -1,11 +1,11 @@
 class ToolsController < ApplicationController
-
   def new
     @tool = Tool.new
   end
 
   def create
     @tool = Tool.new(tool_params)
+    @tool.user = current_user
     if @tool.save
       redirect_to tool_path(@tool)
     else
@@ -14,7 +14,7 @@ class ToolsController < ApplicationController
   end
 
   def index
-   @tools = Tools.all
+    @tools = Tool.all
   end
 
   def show
@@ -24,6 +24,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:detail, :price)
+    params.require(:tool).permit(:name, :detail, :price)
   end
 end

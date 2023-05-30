@@ -2,8 +2,10 @@
 
 <% @tools.each do |tool| %>
   <div>
-    <h3><%= tool.detail %></h3>
-    <p>Price : <%= tool.price %></p>
+  <p>Name : <%=tool.name %></p>
+  <p>Detail :<%=  tool.detail %></p>
+  <p>Price : <%= tool.price %></p>
+  <p>User : <%= tool.user.email %></p>
     <%= link_to "Show", tool_path(tool) %>
   </div>
 <% end %>

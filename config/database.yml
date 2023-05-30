@@ -84,4 +84,4 @@ production:
   database: my_tool_production
   username: my_tool
   password: <%= ENV["MY_TOOL_DATABASE_PASSWORD"] %>
-  url: <%= ENV['DATABASE_URL'] %>
+ # url: <%= ENV['DATABASE_URL'] %>

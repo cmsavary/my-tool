@@ -2,10 +2,16 @@
 
 <% @tools.each do |tool| %>
   <div>
-  <p>Name : <%=tool.name %></p>
-  <p>Detail :<%=  tool.detail %></p>
-  <p>Price : <%= tool.price %></p>
-  <p>User : <%= tool.user.email %></p>
+    <%= cl_image_tag(
+      "https://res.cloudinary.com/dtyjcgbis/image/upload/v1685543883/samples/MY_TOOL/istockphoto-117144601-1024x1024_hb04gp.jpg",
+      width: 400,
+      height: 300,
+      crop: :fill
+    ) %>
+    <p>Name : <%=tool.name %></p>
+    <p>Detail :<%=  tool.detail %></p>
+    <p>Price : <%= tool.price %></p>
+    <p>User : <%= tool.user.email %></p>
     <%= link_to "Show", tool_path(tool) %>
   </div>
 <% end %>

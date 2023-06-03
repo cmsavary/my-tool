@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "pending"
     if @booking.save
-      redirect_to tool_path(@tool)
+      redirect_to tools_path, notice: "booked!"
     else
       render :new
     end

@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h1> Bookings made by other users </h1>
+
+  <% @bookings_from_other_users.each do |booking| %>
+    <div class="card mb-5" >
+      <p><%= booking.user.email %></p>
+      <p><%= booking.tool.name %></p>
+      <p><%= booking.start_date %></p>
+      <p><%= booking.end_date %></p>
+      <p><%= booking.status %></p>
+
+      <%= simple_form_for([booking.tool, booking], method: :patch) do |f| %>
+        <%= f.hidden_field :accept, value: true %>
+        <%= f.submit 'Accept' %>
+      <% end %>
+
+      <%= simple_form_for([booking.tool, booking], method: :patch) do |f| %>
+        <%= f.hidden_field :accept, value: false %>
+        <%= f.submit 'Decline' %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <h1> Bookings I made </h1>
+
+  <% @my_bookings.each do |booking| %>
+    <div class="card mb-7" >
+        <%= booking.id %>
+        <%= booking.status %>
+  <% end %>
+    </div>
+
+
+</div>

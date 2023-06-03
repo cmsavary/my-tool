@@ -1,23 +1,23 @@
 <h1>New Tool</h1>
 
-<%= form_with(model: @tool, url: tools_path, local: true) do |form| %>
+<%= form_with(model: @tool, url: tools_path, local: true) do |f| %>
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :detail %>
-    <%= form.text_field :detail %>
+    <%= f.label :detail %>
+    <%= f.text_field :detail %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Create Tool" %>
+    <%= f.submit "Create Tool" %>
   </div>
 <% end %>
 

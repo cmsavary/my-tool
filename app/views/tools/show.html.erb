@@ -4,4 +4,9 @@
 <p><strong>Detail:</strong> <%= @tool.detail %></p>
 <p><strong>Price:</strong> <%= @tool.price %></p>
 
+
+<%= link_to 'Reserve this Tool', new_tool_booking_path(@tool), class: 'button' %>
+
+
+
 <%= link_to "Back", tools_path %>

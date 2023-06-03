@@ -6,8 +6,15 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Tool.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
+
+if Rails.env.development?
+
+  Booking.destroy_all
+  Tool.destroy_all
+  User.destroy_all
+
+end
+
 p "creating user"
 
 user1 = User.new(

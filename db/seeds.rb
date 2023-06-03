@@ -15,6 +15,7 @@ if Rails.env.development?
 
 end
 
+
 p "creating user"
 
 user1 = User.new(

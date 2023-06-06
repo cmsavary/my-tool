@@ -1,11 +1,12 @@
-<h1 class="text-center">Listing Tools</h1>
-<div class="container mt-5">
-  <div class="row justify-content-center">
+<h1 class="text-center mb-5">Listing Tools</h1>
+
+<div class="container">
+  <div class="row justify-content-center mb-5">
     <div class="col-md-6">
-      <%= form_with url: tools_path, method: :get, class: "input-group mb-3" do %>
+      <%= form_with url: tools_path, method: :get, class: "d-flex justify-content-center align-items-center" do %>
         <%= text_field_tag :query,
               params[:query],
-              class: "form-control",
+              class: "form-control me-2",
               placeholder: "Find a tool"
           %>
         <button class="btn btn-primary" type="submit">Search</button>
@@ -13,22 +14,32 @@
     </div>
   </div>
 
-  <div class="row justify-content-center">
+  <div class="row mb-5">
     <% @tools.each do |tool| %>
       <div class="col-md-4 mb-4">
-        <div class="card h-100">
-          <%= image_tag("banner.png", class: "card-img-top", width: 400, height: 300) %>
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title"><%=tool.name %></h5>
-            <h6>Price : <%= tool.price %></h6>
-            <%= link_to "Show", tool_path(tool), class: "btn btn-primary mt-auto" %>
+        <div class="card tool-card">
+          <%= image_tag("banner.png", class: "card-img-top", alt: "tool image") %>
+          <div class="card-tool-infos d-flex justify-content-between">
+            <div>
+              <%= link_to tool_path(tool) do %>
+                <h2 class="card-title"><%= tool.name %></h2>
+              <% end %>
+            </div>
+            <h2 class="card-tool-pricing"><%= tool.price %></h2>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 
-  <div class="row mt-4 justify-content-center">
+  <div class="row justify-content-center">
     <%= link_to "New tool", new_tool_path, class: "btn btn-success" %>
   </div>
 </div>
+
+
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>

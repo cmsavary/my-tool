@@ -4,12 +4,25 @@
     <p>la première plateforme en ligne dédiée à la vente d'outils entre particuliers. Nous croyons en l'idée de partager les ressources et d'aider nos voisins. Que vous soyez un bricoleur du dimanche ou un professionnel chevronné, notre site vous offre la possibilité de trouver les outils dont vous avez besoin, directement auprès de personnes de votre communauté. <br><br>
 Découvrez une grande variété d'outils proposés par des vendeurs locaux. Du matériel de jardinage aux outils de construction, vous trouverez tout ce dont vous avez besoin pour votre prochain projet. <br><br>
 
-Et si vous avez des outils que vous n'utilisez plus, pourquoi ne pas leur donner une seconde vie ? Avec My tool, vous pouvez non seulement acheter, mais aussi vendre vos outils d'occasion. C'est un moyen simple et efficace de gagner un peu d'argent tout en aidant quelqu'un d'autre à réaliser son projet.
+Et si vous avez des outils que vous n'utilisez plus, pourquoi ne pas leur donner une seconde vie ? Avec My tool, vous pouvez non seulement louer, mais aussi mettre en location vos outils d'occasion. C'est un moyen simple et efficace de gagner un peu d'argent tout en aidant quelqu'un d'autre à réaliser son projet.
 
-Commencez dès maintenant à découvrir, acheter et vendre sur My Tool !"</p>
-<div style="text-align: center;">
-<%= link_to 'Start now', tools_path, class:'cta' %>
+Commencez dès maintenant à découvrir et louer sur My Tool !"</p>
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+  <div class="col-sm-8 my-3">
+    <%= form_with url: tools_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a tool"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 </div>
 
-  </div>
 </div>

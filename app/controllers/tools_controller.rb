@@ -14,8 +14,15 @@ class ToolsController < ApplicationController
   end
 
   def index
-    @tools = Tool.all
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query"
+      @tools = Tool.where(sql_subquery, query: "%#{params[:query]}%")
+    else
+      @tools = Tool.all
+    end
   end
+ 
+
 
   def show
     @tool = Tool.find(params[:id])

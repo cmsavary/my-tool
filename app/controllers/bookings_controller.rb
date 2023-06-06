@@ -11,7 +11,9 @@ class BookingsController < ApplicationController
     @booking.tool = @tool
     @booking.user = current_user
     @booking.status = "pending"
-    if @booking.save
+    if @tool.user == current_user
+      redirect_to tools_path, alert: "You cannot book your own tool!"
+    elsif @booking.save
       redirect_to tools_path, notice: "booked!"
     else
       render :new

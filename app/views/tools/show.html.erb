@@ -1,17 +1,27 @@
-<h1>Détail of tool</h1>
+<div class="tool-details">
+    <h1 class="tool-details__title">Tool Details</h1>
 
-<p><strong>Name:</strong> <%= @tool.name %></p>
-<p><strong>Detail:</strong> <%= @tool.detail %></p>
-<p><strong>Price:</strong> <%= @tool.price %></p>
+    <div class="tool-details__info">
+        <p class="tool-details__info-item">
+            <span class="tool-details__info-label">Name:</span> <%= @tool.name %>
+        </p>
+        <p class="tool-details__info-item">
+            <span class="tool-details__info-label">Detail:</span> <%= @tool.detail %>
+        </p>
+        <p class="tool-details__info-item">
+            <span class="tool-details__info-label">Price:</span> <%= @tool.price %>
+        </p>
+    </div>
 
+    <%= link_to 'Reserve this Tool', new_tool_booking_path(@tool), class: 'tool-details__button tool-details__reserve-button' %>
 
+    <div class="tool-details__gallery">
+        <% @tool.photos.each do |photo| %>
+            <div class="tool-details__gallery-item">
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'tool-details__gallery-image' %>
+            </div>
+        <% end %>
+    </div>
 
-<%= link_to 'Reserve this Tool', new_tool_booking_path(@tool), class: 'button' %>
-
-
-<% @tool.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-
-<%= link_to "Back", tools_path %>
+    <%= link_to "Back", tools_path, class: 'tool-details__button tool-details__back-button' %>
+</div>

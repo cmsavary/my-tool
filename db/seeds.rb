@@ -15,6 +15,7 @@ user1 = User.new(
   name: "Alfonse Dupont",
   email: "a.dupont@gmail.com",
   password: "1234567"
+  address: "125 avenue du Maine 75014 Paris"
 )
 user1.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save!
@@ -24,6 +25,7 @@ user2 = User.new(
   name: "Pierre Leglandu",
   email: "leglandu@yahoo.com",
   password: "1234567"
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
 user2.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 user2.save!
@@ -33,6 +35,7 @@ user3 = User.new(
   name: "Mary Martin",
   email: "marym@yahoo.fr",
   password: "1234567"
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
 user3.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 user3.save!

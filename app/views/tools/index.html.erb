@@ -12,6 +12,7 @@
     <p>Detail :<%=  tool.detail %></p>
     <p>Price : <%= tool.price %></p>
     <p>User : <%= tool.user.email %></p>
+    <p>Address : <%= tool.user.address %></p>
     <%= link_to "Show", tool_path(tool) %>
   </div>
 <% end %>

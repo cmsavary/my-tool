@@ -14,30 +14,30 @@ file = URI.open("https://fr.web.img4.acsta.net/r_1280_720/medias/nmedia/18/65/34
 user1 = User.new(
   name: "Alfonse Dupont",
   email: "a.dupont@gmail.com",
-  password: "1234567"
+  password: "1234567",
   address: "125 avenue du Maine 75014 Paris"
 )
-user1.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save!
 
 file = URI.open("https://fr.web.img4.acsta.net/videothumbnails/18/01/04/10/54/0268683.jpg")
 user2 = User.new(
   name: "Pierre Leglandu",
   email: "leglandu@yahoo.com",
-  password: "1234567"
+  password: "1234567",
   address: "47 boulevard de la République 92210 Saint-Cloud"
 )
-user2.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user2.save!
 
 file = URI.open("https://hips.hearstapps.com/hmg-prod/images/where-to-watch-stream-megan-movie-1673033732.png?crop=1xw:0.7905165615141956xh;center,top")
 user3 = User.new(
   name: "Mary Martin",
   email: "marym@yahoo.fr",
-  password: "1234567"
+  password: "1234567",
   address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
-user3.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
+user3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user3.save!
 
 p "creating tool"

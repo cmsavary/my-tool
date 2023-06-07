@@ -15,6 +15,12 @@ class ToolsController < ApplicationController
 
   def index
     @tools = Tool.all
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show

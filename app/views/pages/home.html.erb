@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "banner.png" %>'); background-size: 100% auto; background-repeat: no-repeat;">
+  <div class="container">
+    <h1>Bienvenue sur My Tool,</h1><br>
+    <p>la première plateforme en ligne dédiée à la vente d'outils entre particuliers. Nous croyons en l'idée de partager les ressources et d'aider nos voisins. Que vous soyez un bricoleur du dimanche ou un professionnel chevronné, notre site vous offre la possibilité de trouver les outils dont vous avez besoin, directement auprès de personnes de votre communauté. <br><br>
+Découvrez une grande variété d'outils proposés par des vendeurs locaux. Du matériel de jardinage aux outils de construction, vous trouverez tout ce dont vous avez besoin pour votre prochain projet. <br><br>
+
+Et si vous avez des outils que vous n'utilisez plus, pourquoi ne pas leur donner une seconde vie ? Avec My tool, vous pouvez non seulement acheter, mais aussi vendre vos outils d'occasion. C'est un moyen simple et efficace de gagner un peu d'argent tout en aidant quelqu'un d'autre à réaliser son projet.
+
+Commencez dès maintenant à découvrir, acheter et vendre sur My Tool !"</p>
+<div style="text-align: center;">
+<%= link_to 'Start now', tools_path, class:'cta' %>
+</div>
+
+  </div>
+</div>

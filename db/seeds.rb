@@ -6,8 +6,16 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Tool.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
+
+if Rails.env.development?
+
+  Booking.destroy_all
+  Tool.destroy_all
+  User.destroy_all
+
+end
+
+
 p "creating user"
 
 file = URI.open("https://fr.web.img4.acsta.net/r_1280_720/medias/nmedia/18/65/34/85/18881126.jpg")

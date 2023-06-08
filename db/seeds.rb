@@ -15,7 +15,6 @@ if Rails.env.development?
 
 end
 
-
 p "creating user"
 
 file = URI.open("https://fr.web.img4.acsta.net/r_1280_720/medias/nmedia/18/65/34/85/18881126.jpg")

@@ -10,28 +10,31 @@ Tool.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 p "creating user"
 
+file = URI.open("https://www.capital.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2018.2F03.2F01.2F757c8c8d-36db-41ff-8e15-29f40b77b2e8.2Ejpeg/768x432/background-color/ffffff/quality/70/comme-dexter-sachez-detecter-les-mensonges-des-dissimulateurs-1274883.jpg")
 user1 = User.new(
   name: "Alfonse Dupont",
   email: "a.dupont@gmail.com",
   password: "1234567"
 )
-
+user1.photo.attach(io: file_1, filename: "nes.png", content_type: "image/png")
 user1.save!
 
+file = URI.open("https://www.critikat.com/wp-content/uploads/2018/06/hannibal-le-cannibale.jpg")
 user2 = User.new(
   name: "Pierre Leglandu",
   email: "leglandu@yahoo.com",
   password: "1234567"
 )
-
+user2.photo.attach(io: file_1, filename: "nes.png", content_type: "image/png")
 user2.save!
 
+file = URI.open("https://hips.hearstapps.com/hmg-prod/images/where-to-watch-stream-megan-movie-1673033732.png?crop=1xw:0.7905165615141956xh;center,top")
 user3 = User.new(
   name: "Mary Martin",
   email: "marym@yahoo.fr",
   password: "1234567"
 )
-
+user3.photo.attach(io: file_1, filename: "nes.png", content_type: "image/png")
 user3.save!
 
 p "creating tool"

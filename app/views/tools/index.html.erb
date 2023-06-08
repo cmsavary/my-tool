@@ -3,7 +3,7 @@
 <% @tools.each do |tool| %>
   <div>
     <%= cl_image_tag(
-      "https://res.cloudinary.com/dtyjcgbis/image/upload/v1685543883/samples/MY_TOOL/istockphoto-117144601-1024x1024_hb04gp.jpg",
+      tool.photos.first.key,
       width: 400,
       height: 300,
       crop: :fill
@@ -12,8 +12,14 @@
     <p>Detail :<%=  tool.detail %></p>
     <p>Price : <%= tool.price %></p>
     <p>User : <%= tool.user.email %></p>
+    <p>Address : <%= tool.user.address %></p>
     <%= link_to "Show", tool_path(tool) %>
   </div>
 <% end %>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 <%= link_to "New tool", new_tool_path %>

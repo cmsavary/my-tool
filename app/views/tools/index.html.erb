@@ -18,14 +18,18 @@
     <% @tools.each do |tool| %>
       <div class="col-md-4 mb-4">
         <div class="card tool-card">
-          <%= image_tag("banner.png", class: "card-img-top", alt: "tool image") %>
+          <% if tool.photos.attached? && tool.photos.any? %>
+            <%= image_tag tool.photos.first, class: "card-img-top", alt: "tool image" %>
+          <% else %>
+            <%= image_tag("banner.png", class: "card-img-top", alt: "tool image") %>
+          <% end %>
           <div class="card-tool-infos d-flex justify-content-between">
             <div>
               <%= link_to tool_path(tool) do %>
-                <h2 class="card-title"><%= tool.name %></h2>
+                <h2 class="card-title tool-name-highlight"><%= tool.name %></h2>
               <% end %>
             </div>
-            <h2 class="card-tool-pricing"><%= tool.price %></h2>
+            <h2 class="card-tool-pricing tool-price-highlight"><%= tool.price %></h2> 
           </div>
         </div>
       </div>
@@ -36,10 +40,13 @@
     <%= link_to "New tool", new_tool_path, class: "btn btn-success" %>
   </div>
 </div>
+<p>
 
 
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
+
+
+
+
+
+
+</p>

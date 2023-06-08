@@ -13,15 +13,17 @@
             <p class="card-text"><strong>End Date:</strong> <%= booking.end_date %></p>
             <p class="card-text"><strong>Status:</strong> <%= booking.status %></p>
 
-            <%= simple_form_for([booking.tool, booking], method: :patch) do |f| %>
-              <%= f.hidden_field :accept, value: true %>
-              <%= f.submit 'Accept', class: 'btn btn-success mr-2' %>
-            <% end %>
+            <div class="d-flex justify-content-between">
+              <%= simple_form_for([booking.tool, booking], method: :patch, html: { class: 'w-50 mr-2' }) do |f| %>
+                <%= f.hidden_field :accept, value: true %>
+                <%= f.submit 'Accept', class: 'btn btn-success btn-block' %>
+              <% end %>
 
-            <%= simple_form_for([booking.tool, booking], method: :patch) do |f| %>
-              <%= f.hidden_field :accept, value: false %>
-              <%= f.submit 'Decline', class: 'btn btn-danger' %>
-            <% end %>
+              <%= simple_form_for([booking.tool, booking], method: :patch, html: { class: 'w-50' }) do |f| %>
+                <%= f.hidden_field :accept, value: false %>
+                <%= f.submit 'Decline', class: 'btn btn-danger btn-block' %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

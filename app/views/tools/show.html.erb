@@ -1,28 +1,32 @@
-<div class="tool-details">
-    <h1 class="tool-details__title">Tool Details</h1>
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Tool Details</h1>
 
-    <div class="tool-details__info">
-        <p class="tool-details__info-item">
-            <span class="tool-details__info-label">Name:</span> <%= @tool.name %>
-        </p>
-        <p class="tool-details__info-item">
-            <span class="tool-details__info-label">Detail:</span> <%= @tool.detail %>
-        </p>
-        <p class="tool-details__info-item">
-            <span class="tool-details__info-label">Price:</span> <%= @tool.price %>
-        </p>
+    <div class="card w-75 mx-auto mb-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title"><%= @tool.name %></h5>
+                    <p class="card-text"><%= @tool.detail %></p>
+                    <p class="card-text">Price: <%= @tool.price %></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <% if @tool.photos.any? %>
+                    <%= cl_image_tag @tool.photos.first.key, height: 300, width: 400, crop: :fill, class: 'img-thumbnail' %>
+                <% end %>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <%= link_to 'Reserve this Tool', new_tool_booking_path(@tool), class: 'btn btn-primary mt-3 me-2' %>
+            <%= link_to "Back", tools_path, class: 'btn btn-secondary mt-3' %>
+        </div>
     </div>
 
-    <%= link_to 'Reserve this Tool', new_tool_booking_path(@tool), class: 'tool-details__button tool-details__reserve-button' %>
-
-    <div class="tool-details__gallery">
-        <% @tool.photos.each do |photo| %>
-            <div class="tool-details__gallery-item">
-                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'tool-details__gallery-image' %>
+    <div class="row justify-content-center mb-4">
+        <% @tool.photos.drop(1).each do |photo| %>
+            <div class="col-md-4 mb-3">
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'img-thumbnail' %>
             </div>
         <% end %>
     </div>
-
-    <%= link_to "Back", tools_path, class: 'tool-details__button tool-details__back-button' %>
 </div>
-

@@ -21,7 +21,7 @@ class ToolsController < ApplicationController
       @tools = Tool.all
     end
   end
- 
+
 
 
   def show

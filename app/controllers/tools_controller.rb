@@ -15,10 +15,10 @@ class ToolsController < ApplicationController
 
   def index
     @tools = Tool.all
-    @markers = @flats.geocoded.map do |flat|
+    @markers = @tools.geocoded.map do |tool|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: tool.latitude,
+        lng: tool.longitude
       }
     end
   end

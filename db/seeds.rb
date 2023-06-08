@@ -52,7 +52,8 @@ tool1 = Tool.new(
   Idéale pour les projets de perçage dans le bois, le métal, les plastiques et pour les vissages
   POWER FOR ALL : une batterie et un chargeur suffisent pour tout un système d’outils de la gamme Home & Garden
   Sans batterie ni chargeur",
-  price: 45
+  price: 45,
+  address: "125 avenue du Maine 75014 Paris"
 )
 
 tool1.photos.attach(io: file_1, filename: "nes.png", content_type: "image/png")
@@ -65,7 +66,8 @@ file = URI.open("https://image.spreadshirtmedia.net/image-server/v1/compositions
 tool2 = Tool.new(
   name: "tournevis",
   detail: "ergonomique, prêt à faire tourner les têtes",
-  price: 15
+  price: 15,
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
 
 tool2.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -76,7 +78,8 @@ file = URI.open("https://i.skyrock.net/0195/3500195/pics/3312301372_2_3_18UkKx1C
 tool3 = Tool.new(
   name: "scie sauteuse",
   detail: "une scie des plus épatantes, pour sûr, elle va vous scier !",
-  price: 65
+  price: 65,
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
 tool3.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool3.user = user3
@@ -86,7 +89,8 @@ file = URI.open("https://img.freepik.com/photos-gratuite/sang-marteau_144627-599
 tool4 = Tool.new(
   name: "marteau",
   detail: "élégant, racé, ne pas utiliser en cas de rage",
-  price: 25
+  price: 25,
+  address: "125 avenue du Maine 75014 Paris"
 )
 tool4.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool4.user = user1
@@ -96,7 +100,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/pince-is
 tool5 = Tool.new(
   name: "pince",
   detail: "facile à régler, généreuse comme son nom ne l'indique pas, économique",
-  price: 15
+  price: 15,
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
 tool5.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool5.user = user2
@@ -106,7 +111,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/scie-pix
 tool6 = Tool.new(
   name: "scie",
   detail: "une scie des plus épatantes, pour sûr, elle va vous scier !",
-  price: 65
+  price: 65,
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
 tool6.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool6.user = user3
@@ -116,7 +122,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/metre-is
 tool7 = Tool.new(
   name: "mètre",
   detail: "adaptable à toutes surfaces, prêt à tout mesurer",
-  price: 17
+  price: 17,
+  address: "125 avenue du Maine 75014 Paris"
 )
 tool7.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool7.user = user1
@@ -126,7 +133,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/niveau-a
 tool8 = Tool.new(
   name: "niveau à bulles",
   detail: "pour buller au carré",
-  price: 12
+  price: 12,
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
 tool8.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool8.user = user2
@@ -136,7 +144,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/28859.jp
 tool9 = Tool.new(
   name: "serre-joint",
   detail: "pure qualité, pour tous les bricoleurs en herbe",
-  price: 30
+  price: 30,
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
 tool9.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool9.user = user3
@@ -146,7 +155,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/ponceuse
 tool10 = Tool.new(
   name: "ponceuse électrique",
   detail: "maniable, rapide, idéale pour manucure et pieds",
-  price: 55
+  price: 55,
+  address: "125 avenue du Maine 75014 Paris"
 )
 tool10.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool10.user = user1
@@ -156,7 +166,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/agrafeus
 tool11 = Tool.new(
   name: "agrafeuse",
   detail: "à n'utiliser qu'en dernier recours avec sa belle-mère",
-  price: 40
+  price: 40,
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
 tool11.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool11.user = user2
@@ -166,7 +177,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/boite-a-
 tool12 = Tool.new(
   name: "scie égoïne",
   detail: "de marque Dexter, CQFD",
-  price: 75
+  price: 75,
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
 tool12.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool12.user = user3

@@ -10,15 +10,16 @@
             <div class="mb-4">
               <%= f.label :name, class: 'form-label' %>
               <div class="input-group">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-toolbox"></i></span>
+                <span class="input-group-text" id="basic-addon1"><i class="fas fa-toolbox custom-icon-color"></i></span>
                 <%= f.text_field :name, class: 'form-control', placeholder: "Tool's name" %>
               </div>
             </div>
 
+
             <div class="mb-4">
               <%= f.label :detail, class: 'form-label' %>
               <div class="input-group">
-                <span class="input-group-text" id="basic-addon2"><i class="fas fa-info-circle"></i></span>
+                <span class="input-group-text" id="basic-addon2"><i class="fas fa-info-circle custom-icon-color"></i></span>
                 <%= f.text_field :detail, class: 'form-control', placeholder: "More details" %>
               </div>
             </div>
@@ -26,7 +27,7 @@
             <div class="mb-4">
               <%= f.label :price, class: 'form-label' %>
               <div class="input-group">
-                <span class="input-group-text" id="basic-addon3"><i class="fas fa-dollar-sign"></i></span>
+                <span class="input-group-text" id="basic-addon3"><i class="fas fa-dollar-sign custom-icon-color"></i></span>
                 <%= f.number_field :price, class: 'form-control', placeholder: "Price" %>
               </div>
             </div>
@@ -41,6 +42,6 @@
   </div>
 
   <div class="text-center mt-3">
-    <%= link_to 'Back', tools_path, class: 'btn btn-outline-secondary' %>
+    <%= link_to 'Back', tools_path, class: 'btn btn-dark' %>
   </div>
 </div>

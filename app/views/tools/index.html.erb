@@ -1,4 +1,5 @@
-<h1>Listing tools</h1>
+
+<h1>My tools</h1>
 
 <% @tools.each do |tool| %>
   <div>
@@ -12,14 +13,57 @@
     <p>Detail :<%=  tool.detail %></p>
     <p>Price : <%= tool.price %></p>
     <p>User : <%= tool.user.email %></p>
-    <p>Address : <%= tool.user.address %></p>
     <%= link_to "Show", tool_path(tool) %>
+
+<div class="container-fluid">
+  <div class="row justify-content-center mt-3 mb-3">
+    <div class="col-12 col-md-6">
+      <%= form_with url: tools_path, method: :get, class: "d-flex justify-content-center" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control me-2",
+              placeholder: "Find a tool"
+        %>
+        <button class="btn btn-primary" type: "submit">Search</button>
+      <% end %>
+    </div>
   </div>
-<% end %>
 
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="row">
+    <div class="col-md-6">
+      <% @tools.each_slice(2) do |tool_slice| %>
+        <div class="row justify-content-center">
+          <% tool_slice.each do |tool| %>
+            <div class="col-md-6 mb-4">
+              <div class="card h-100 shadow-lg">
+                <% if tool.photos.attached? && tool.photos.any? %>
+                  <%= image_tag tool.photos.first, size: "200x200", class: "card-img-top rounded", alt: "tool image" %>
+                <% else %>
+                  <%= image_tag("banner.png", size: "200x200", class: "card-img-top rounded", alt: "tool image") %>
+                <% end %>
+                <div class="card-body text-center">
+                  <%= link_to tool_path(tool), class: "text-decoration-none" do %>
+                    <h5 class="card-title fw-bold text-primary"><%= tool.name %></h5>
+                  <% end %>
+                  <p class="card-text"><small class="text-muted">Loué par: </small><%= tool.user.email %></p>
+                  <p class="card-text"><small class="text-muted">Adresse: </small><%= tool.user.address %></p>
+                  <p class="card-text"><small class="text-muted">Prix: </small><%= tool.price %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="d-grid gap-2">
+        <%= link_to "New tool", new_tool_path, class: "btn btn-success mb-4" %>
+      </div>
+    </div>
 
-<%= link_to "New tool", new_tool_path %>
+    <div class="col-md-6">
+      <div style="width: 100%; height: 100vh;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+  </div>
+</div>

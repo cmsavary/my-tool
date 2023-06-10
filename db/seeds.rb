@@ -18,12 +18,14 @@ end
 p "creating user"
 
 file = URI.open("https://fr.web.img4.acsta.net/r_1280_720/medias/nmedia/18/65/34/85/18881126.jpg")
+
 user1 = User.new(
   name: "Alfonse Dupont",
   email: "a.dupont@gmail.com",
   password: "1234567",
   address: "125 avenue du Maine 75014 Paris"
 )
+
 user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save!
 
@@ -34,6 +36,7 @@ user2 = User.new(
   password: "1234567",
   address: "47 boulevard de la République 92210 Saint-Cloud"
 )
+
 user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user2.save!
 
@@ -44,6 +47,7 @@ user3 = User.new(
   password: "1234567",
   address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
+
 user3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user3.save!
 

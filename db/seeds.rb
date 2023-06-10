@@ -5,15 +5,15 @@ require "open-uri"
 # Examples:
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# Character.create(name: "Luke", movie: movies.first)
 
-  # if Rails.env.development?
+# if Rails.env.development?
 
-  Booking.destroy_all
-  Tool.destroy_all
-  User.destroy_all
+Booking.destroy_all
+Tool.destroy_all
+User.destroy_all
 
-  # end
+# end
 
 p "creating user"
 

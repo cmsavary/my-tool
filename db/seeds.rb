@@ -108,7 +108,7 @@ tool4.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool4.user = user1
 tool4.save!
 
-file = URI.open("hhttps://i.ytimg.com/vi/wthctZxRShg/maxresdefault.jpg")
+file = URI.open("https://i.ytimg.com/vi/wthctZxRShg/maxresdefault.jpg")
 tool5 = Tool.new(
   name: "pince",
   detail: "facile à régler, généreuse comme son nom ne l'indique pas, économique",
@@ -152,7 +152,7 @@ tool8.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool8.user = user2
 tool8.save!
 
-file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/28859.jpg")
+file = URI.open("https://bynder.sbdinc.com/m/9613a2fc1c5186b1/Drupal_Large-1-83-065_F3.jpg")
 tool9 = Tool.new(
   name: "serre-joint",
   detail: "pure qualité, pour tous les bricoleurs en herbe",

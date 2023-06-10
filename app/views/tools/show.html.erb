@@ -18,9 +18,13 @@
         </div>
         <div class="card-footer text-center">
             <%= link_to 'Reserve this Tool', new_tool_booking_path(@tool), class: 'btn btn-primary mt-3 me-2' %>
-            <%= link_to "Back", tools_path, class: 'btn btn-secondary mt-3' %>
         </div>
-    </div>
+        </div>
+          <div class="text-center mt-3">
+    <%= link_to 'Back', tools_path, class: 'btn btn-dark' %>
+  </div>
+</div>
+
 
     <div class="row justify-content-center mb-4">
         <% @tool.photos.drop(1).each do |photo| %>

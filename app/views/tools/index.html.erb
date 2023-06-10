@@ -5,15 +5,17 @@
   <div class="row justify-content-center mt-3 mb-3">
     <div class="col-12 col-md-6">
       <%= form_with url: tools_path, method: :get, class: "d-flex justify-content-center" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control me-2",
-              placeholder: "Find a tool"
+       <%= text_field_tag :query,
+          params[:query],
+          class: "form-control me-2",
+          placeholder: "Find a tool",
+          style: "background-color: white;"
         %>
         <button class="btn btn-primary" type="submit">Search</button>
       <% end %>
     </div>
   </div>
+
 
   <div class="row">
     <div class="col-md-6">

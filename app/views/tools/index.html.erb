@@ -4,20 +4,6 @@
 <div class="container-fluid">
   <div class="row justify-content-center mt-3 mb-3">
     <div class="col-12 col-md-6">
-    <% @tools.each do |tool| %>
-  <div>
-    <%= cl_image_tag(
-      tool.photos.first.key,
-      width: 400,
-      height: 300,
-      crop: :fill
-    ) %>
-    <p>Name : <%=tool.name %></p>
-    <p>Detail :<%=  tool.detail %></p>
-    <p>Price : <%= tool.price %></p>
-    <p>User : <%= tool.user.email %></p>
-    <%= link_to "Show", tool_path(tool) %>
-    <% end %>
       <%= form_with url: tools_path, method: :get, class: "d-flex justify-content-center" do %>
         <%= text_field_tag :query,
               params[:query],

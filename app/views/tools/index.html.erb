@@ -23,9 +23,9 @@
             <div class="col-md-6 mb-4">
               <div class="card h-100 shadow-lg">
                 <% if tool.photos.attached? && tool.photos.any? %>
-                  <%= image_tag tool.photos.first, size: "200x200", class: "card-img-top rounded", alt: "tool image" %>
+                  <%= image_tag tool.photos.first, size: "200x200", class: "card-img-top rounded", alt: "tool image", style: 'width: 100%; object-fit: cover;' %>
                 <% else %>
-                  <%= image_tag("banner.png", size: "200x200", class: "card-img-top rounded", alt: "tool image") %>
+                  <%= image_tag("banner.png", size: "200x200", class: "card-img-top rounded", alt: "tool image", style: 'object-fit: cover;') %>
                 <% end %>
                 <div class="card-body text-center">
                   <%= link_to tool_path(tool), class: "text-decoration-none" do %>
@@ -33,7 +33,7 @@
                   <% end %>
                   <p class="card-text"><small class="text-muted">Loué par: </small><%= tool.user.email %></p>
                   <p class="card-text"><small class="text-muted">Adresse: </small><%= tool.user.address %></p>
-                  <p class="card-text"><small class="text-muted">Prix: </small><%= tool.price %></p>
+                  <p class="card-text"><small class="text-muted">Prix: </small><%= tool.price %>€</p>
                 </div>
               </div>
             </div>

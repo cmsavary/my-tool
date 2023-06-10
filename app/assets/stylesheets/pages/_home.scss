@@ -4,11 +4,14 @@ $spacer: 8px;
 
 body {
   background: $gray; // Using this variable
+  p {
+    font-family: 'Cabin', sans-serif;
   }
+}
 
- body .lead {
-    font-family: 'Cabin', system-ui;
-  }
+ // body .lead {
+  //  font-family: 'Cabin', system-ui;
+ // }
 
 
 p {

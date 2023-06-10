@@ -5,6 +5,9 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  .navbar-nav .nav-item{
+    margin-left: 10px;
+  }
 }
 
 .navbar-lewagon .navbar-brand img {

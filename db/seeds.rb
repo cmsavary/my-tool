@@ -52,8 +52,9 @@ user3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user3.save!
 
 p "creating tool"
-file_1 = URI.open("https://media.gettyimages.com/id/157720585/fr/photo/rolling-spaghettis-la-voie-rapide.jpg?s=612x612&w=gi&k=20&c=HXzyc_jJs2qjOo2s9ekDChn5edWcL8eCfMt2JZLH9q8=")
-file_2 = URI.open("https://i.ytimg.com/vi/XU4GJFRgDpY/maxresdefault.jpg")
+
+file_1 = URI.open("https://i.ytimg.com/vi/XU4GJFRgDpY/maxresdefault.jpg")
+file_2 = URI.open("https://media.gettyimages.com/id/157720585/fr/photo/rolling-spaghettis-la-voie-rapide.jpg?s=612x612&w=gi&k=20&c=HXzyc_jJs2qjOo2s9ekDChn5edWcL8eCfMt2JZLH9q8=")
 
 tool1 = Tool.new(
   name: "perceuse-visseuse",
@@ -73,7 +74,7 @@ tool1.photos.attach(io: file_2, filename: "nes_2.png", content_type: "image/png"
 tool1.user = user1
 tool1.save!
 
-file = URI.open("https://image.spreadshirtmedia.net/image-server/v1/compositions/T1187A2PA4233PT17X8Y13D182066347W30395H30395/views/1,width=550,height=550,appearanceId=2,backgroundColor=000000,noPt=true/tournevis-breton-humour-bretagne-idee-cadeau-sweat-shirt-bio-homme.jpg")
+file = URI.open("https://www.tunisienumerique.com/wp-content/uploads/2022/06/tournevis-1000x600.jpg")
 tool2 = Tool.new(
   name: "tournevis",
   detail: "ergonomique, prêt à faire tourner les têtes",
@@ -107,7 +108,7 @@ tool4.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool4.user = user1
 tool4.save!
 
-file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/pince-istock.jpg")
+file = URI.open("hhttps://i.ytimg.com/vi/wthctZxRShg/maxresdefault.jpg")
 tool5 = Tool.new(
   name: "pince",
   detail: "facile à régler, généreuse comme son nom ne l'indique pas, économique",
@@ -129,7 +130,7 @@ tool6.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool6.user = user3
 tool6.save!
 
-file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/metre-istock.jpg")
+file = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWu0rAQ7VKxfgc3iL7Jz1aXim1OBd0gSeKc3JwI7gJt7pOPe-9VXFNkJlrYTkyBT5-_lQ&usqp=CAU")
 tool7 = Tool.new(
   name: "mètre",
   detail: "adaptable à toutes surfaces, prêt à tout mesurer",
@@ -140,7 +141,7 @@ tool7.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool7.user = user1
 tool7.save!
 
-file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/niveau-a-bulles-pixabay-jarmoluk.jpg")
+file = URI.open("https://media.istockphoto.com/id/173039820/fr/photo/construction-travailleur-stares-esprit-niveau-duvet.jpg?s=612x612&w=0&k=20&c=p02kFSmYssqVSqEOQlC7WTJU53vrGLXMq8S-c5cCcQA=")
 tool8 = Tool.new(
   name: "niveau à bulles",
   detail: "pour buller au carré",

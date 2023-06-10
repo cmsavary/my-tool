@@ -13,6 +13,8 @@
             <div class="col-md-6">
                 <% if @tool.photos.any? %>
                     <%= cl_image_tag @tool.photos.first.key, height: 300, width: 400, crop: :fill, class: 'img-thumbnail' %>
+                    <% else %>
+                    <%= image_tag "banner.png", height: 300, width: 400, crop: :fill, class: 'img-thumbnail' %>
                 <% end %>
             </div>
         </div>

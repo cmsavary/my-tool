@@ -1,5 +1,4 @@
 
-<h1>My tools</h1>
 
 <div class="container-fluid">
   <div class="row justify-content-center mt-3 mb-3">
@@ -46,11 +45,10 @@
     </div>
 
     <div class="col-md-6">
-      <div style="width: 100%; height: 100vh;"
+      <div class="sticky-container" style="width: 100%; height: 100vh;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
   </div>
 </div>
-

@@ -1,0 +1,16 @@
+//.sticky-image-container {
+  //position: relative;
+ // min-width: 960px;
+//}
+
+//.sticky-image-container img {
+//  position: absolute;
+//  right: 0;
+ // top: 0;
+//}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}

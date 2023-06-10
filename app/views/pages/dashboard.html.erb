@@ -1,35 +1,48 @@
-<div class="container">
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Bookings</h1>
 
-  <h1> Bookings made by other users </h1>
+  <h2 class="mb-3">Mes locations</h2>
+  <div class="row">
+    <% @bookings_from_other_users.each do |booking| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.tool.name %></h5>
+            <p class="card-text"><strong>User:</strong> <%= booking.user.email %></p>
+            <p class="card-text"><strong>Start Date:</strong> <%= booking.start_date %></p>
+            <p class="card-text"><strong>End Date:</strong> <%= booking.end_date %></p>
+            <p class="card-text"><strong>Status:</strong> <%= booking.status %></p>
 
-  <% @bookings_from_other_users.each do |booking| %>
-    <div class="card mb-5" >
-      <p><%= booking.user.email %></p>
-      <p><%= booking.tool.name %></p>
-      <p><%= booking.start_date %></p>
-      <p><%= booking.end_date %></p>
-      <p><%= booking.status %></p>
+            <div class="d-flex justify-content-between">
+              <%= simple_form_for([booking.tool, booking], method: :patch, html: { class: 'w-50 mr-2' }) do |f| %>
+                <%= f.hidden_field :accept, value: true %>
+                <%= f.submit 'Accept', class: 'btn btn-success btn-block' %>
+              <% end %>
 
-      <%= simple_form_for([booking.tool, booking], method: :patch) do |f| %>
-        <%= f.hidden_field :accept, value: true %>
-        <%= f.submit 'Accept' %>
-      <% end %>
+              <%= simple_form_for([booking.tool, booking], method: :patch, html: { class: 'w-50' }) do |f| %>
+                <%= f.hidden_field :accept, value: false %>
+                <%= f.submit 'Decline', class: 'btn btn-danger btn-block' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-      <%= simple_form_for([booking.tool, booking], method: :patch) do |f| %>
-        <%= f.hidden_field :accept, value: false %>
-        <%= f.submit 'Decline' %>
-      <% end %>
-    </div>
-  <% end %>
-
-  <h1> Bookings I made </h1>
-
-  <% @my_bookings.each do |booking| %>
-    <div class="card mb-7" >
-        <%= booking.id %>
-        <%= booking.status %>
-  <% end %>
-    </div>
-
-
+  <h2 class="my-3">Mes reservations</h2>
+  <div class="row">
+    <% @my_bookings.each do |booking| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
+          <div class="card-body">
+            <h5 class="card-title"><%= booking.tool.name %></h5>
+            <p class="card-text"><strong>Start Date:</strong> <%= booking.start_date %></p>
+            <p class="card-text"><strong>End Date:</strong> <%= booking.end_date %></p>
+            <p class="card-text"><strong>Status:</strong> <%= booking.status %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -6,35 +6,50 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Tool.destroy_all if Rails.env.development?
-User.destroy_all if Rails.env.development?
+
+if Rails.env.development?
+
+  Booking.destroy_all
+  Tool.destroy_all
+  User.destroy_all
+
+end
+
+
 p "creating user"
 
-file = URI.open("https://www.capital.fr/imgre/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2018.2F03.2F01.2F757c8c8d-36db-41ff-8e15-29f40b77b2e8.2Ejpeg/768x432/background-color/ffffff/quality/70/comme-dexter-sachez-detecter-les-mensonges-des-dissimulateurs-1274883.jpg")
+file = URI.open("https://fr.web.img4.acsta.net/r_1280_720/medias/nmedia/18/65/34/85/18881126.jpg")
+
 user1 = User.new(
   name: "Alfonse Dupont",
   email: "a.dupont@gmail.com",
-  password: "1234567"
+  password: "1234567",
+  address: "125 avenue du Maine 75014 Paris"
 )
-user1.photo.attach(io: file_1, filename: "nes.png", content_type: "image/png")
+
+user1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user1.save!
 
-file = URI.open("https://www.critikat.com/wp-content/uploads/2018/06/hannibal-le-cannibale.jpg")
+file = URI.open("https://fr.web.img4.acsta.net/videothumbnails/18/01/04/10/54/0268683.jpg")
 user2 = User.new(
   name: "Pierre Leglandu",
   email: "leglandu@yahoo.com",
-  password: "1234567"
+  password: "1234567",
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
-user2.photo.attach(io: file_1, filename: "nes.png", content_type: "image/png")
+
+user2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user2.save!
 
 file = URI.open("https://hips.hearstapps.com/hmg-prod/images/where-to-watch-stream-megan-movie-1673033732.png?crop=1xw:0.7905165615141956xh;center,top")
 user3 = User.new(
   name: "Mary Martin",
   email: "marym@yahoo.fr",
-  password: "1234567"
+  password: "1234567",
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
-user3.photo.attach(io: file_1, filename: "nes.png", content_type: "image/png")
+
+user3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user3.save!
 
 p "creating tool"
@@ -49,7 +64,8 @@ tool1 = Tool.new(
   Idéale pour les projets de perçage dans le bois, le métal, les plastiques et pour les vissages
   POWER FOR ALL : une batterie et un chargeur suffisent pour tout un système d’outils de la gamme Home & Garden
   Sans batterie ni chargeur",
-  price: 45
+  price: 45,
+  address: "125 avenue du Maine 75014 Paris"
 )
 
 tool1.photos.attach(io: file_1, filename: "nes.png", content_type: "image/png")
@@ -62,7 +78,8 @@ file = URI.open("https://image.spreadshirtmedia.net/image-server/v1/compositions
 tool2 = Tool.new(
   name: "tournevis",
   detail: "ergonomique, prêt à faire tourner les têtes",
-  price: 15
+  price: 15,
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
 
 tool2.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -73,7 +90,8 @@ file = URI.open("https://i.skyrock.net/0195/3500195/pics/3312301372_2_3_18UkKx1C
 tool3 = Tool.new(
   name: "scie sauteuse",
   detail: "une scie des plus épatantes, pour sûr, elle va vous scier !",
-  price: 65
+  price: 65,
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
 tool3.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool3.user = user3
@@ -83,7 +101,8 @@ file = URI.open("https://img.freepik.com/photos-gratuite/sang-marteau_144627-599
 tool4 = Tool.new(
   name: "marteau",
   detail: "élégant, racé, ne pas utiliser en cas de rage",
-  price: 25
+  price: 25,
+  address: "125 avenue du Maine 75014 Paris"
 )
 tool4.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool4.user = user1
@@ -93,7 +112,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/pince-is
 tool5 = Tool.new(
   name: "pince",
   detail: "facile à régler, généreuse comme son nom ne l'indique pas, économique",
-  price: 15
+  price: 15,
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
 tool5.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool5.user = user2
@@ -103,7 +123,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/scie-pix
 tool6 = Tool.new(
   name: "scie",
   detail: "une scie des plus épatantes, pour sûr, elle va vous scier !",
-  price: 65
+  price: 65,
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
 tool6.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool6.user = user3
@@ -113,7 +134,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/metre-is
 tool7 = Tool.new(
   name: "mètre",
   detail: "adaptable à toutes surfaces, prêt à tout mesurer",
-  price: 17
+  price: 17,
+  address: "125 avenue du Maine 75014 Paris"
 )
 tool7.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool7.user = user1
@@ -123,7 +145,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/niveau-a
 tool8 = Tool.new(
   name: "niveau à bulles",
   detail: "pour buller au carré",
-  price: 12
+  price: 12,
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
 tool8.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool8.user = user2
@@ -133,7 +156,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/28859.jp
 tool9 = Tool.new(
   name: "serre-joint",
   detail: "pure qualité, pour tous les bricoleurs en herbe",
-  price: 30
+  price: 30,
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
 tool9.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool9.user = user3
@@ -143,7 +167,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/ponceuse
 tool10 = Tool.new(
   name: "ponceuse électrique",
   detail: "maniable, rapide, idéale pour manucure et pieds",
-  price: 55
+  price: 55,
+  address: "125 avenue du Maine 75014 Paris"
 )
 tool10.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool10.user = user1
@@ -153,7 +178,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/agrafeus
 tool11 = Tool.new(
   name: "agrafeuse",
   detail: "à n'utiliser qu'en dernier recours avec sa belle-mère",
-  price: 40
+  price: 40,
+  address: "47 boulevard de la République 92210 Saint-Cloud"
 )
 tool11.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool11.user = user2
@@ -163,7 +189,8 @@ file = URI.open("https://maison.20minutes.fr/wp-content/uploads/2020/05/boite-a-
 tool12 = Tool.new(
   name: "scie égoïne",
   detail: "de marque Dexter, CQFD",
-  price: 75
+  price: 75,
+  address: "40 rue Nationale 92100 Boulogne-Billancourt"
 )
 tool12.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 tool12.user = user3

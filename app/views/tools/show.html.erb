@@ -1,17 +1,32 @@
-<h1>Détail of tool</h1>
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Tool Details</h1>
 
-<p><strong>Name:</strong> <%= @tool.name %></p>
-<p><strong>Detail:</strong> <%= @tool.detail %></p>
-<p><strong>Price:</strong> <%= @tool.price %></p>
+    <div class="card w-75 mx-auto mb-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title"><%= @tool.name %></h5>
+                    <p class="card-text"><%= @tool.detail %></p>
+                    <p class="card-text">Price: <%= @tool.price %></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <% if @tool.photos.any? %>
+                    <%= cl_image_tag @tool.photos.first.key, height: 300, width: 400, crop: :fill, class: 'img-thumbnail' %>
+                <% end %>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <%= link_to 'Reserve this Tool', new_tool_booking_path(@tool), class: 'btn btn-primary mt-3 me-2' %>
+            <%= link_to "Back", tools_path, class: 'btn btn-secondary mt-3' %>
+        </div>
+    </div>
 
-
-
-<%= link_to 'Reserve this Tool', new_tool_booking_path(@tool), class: 'button' %>
-
-
-<%= @tool.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-
-<%= link_to "Back", tools_path %>
+    <div class="row justify-content-center mb-4">
+        <% @tool.photos.drop(1).each do |photo| %>
+            <div class="col-md-4 mb-3">
+                <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'img-thumbnail' %>
+            </div>
+        <% end %>
+    </div>
+</div>
